@@ -7,9 +7,9 @@ Basic cryptocurrency index with some data about it.
 ---
 
 ## Pre-visualization
-Custom tooltip and value switch
+Custom tooltip and value switch<br>
 <img src="https://media.giphy.com/media/wKMbW2TdRU870G5xOG/giphy.gif"/><br>
-Search system
+Search system<br>
 <img src="https://media.giphy.com/media/eZYLbhCq3Obt2OdhEI/giphy.gif"/>
 
 ---
