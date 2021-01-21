@@ -1,4 +1,4 @@
-# Orbs
+# Cryptocurrency Now
 
 ## About
 
