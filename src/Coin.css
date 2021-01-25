@@ -14,6 +14,9 @@
 
 .coin-row:hover {
     background-color: #1e232e;
+    transform: scale(1.005, 1.005);
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 1px;
+    transition: transform .25s, background-color .25s, box-shadow .25s;
 }
 
 .coin {

@@ -13,6 +13,7 @@ function App() {
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=1&sparkline=false'
       ).then(res => {
         setCoins(res.data);
+        // Ordenar os objetos recebidos
         // .sort((a, b) => parseFloat(b.total_volume) - parseFloat(a.total_volume))
       }).catch(error => console.log(error));
 
@@ -26,11 +27,43 @@ function App() {
 
   return (
     <div className="coin-app">
+      {/* Scroll com símbolos e variações das criptomoedas */}
+      <div className="marquee">
+        <span>
+          {
+            coins.map(coin => {
+              if (coin.symbol !== null && coin.price_change_percentage_24h !== null)
+              return (
+                <b key={coin.id} className={coin.price_change_percentage_24h < 0 ? "red" : "green"}>
+                    {console.log(coin.name)}
+                    {coin.symbol.toUpperCase() + " " + coin.price_change_percentage_24h.toFixed(2) + "%"}
+                </b>
+                )
+              })
+            }
+        
+          </span>
+      </div>
       <div className="coins-search">
-        <input type="text" placeholder="Buscar" className="coin-input" onChange={handleChange}/>
+        <input list="search-list" type="text" placeholder="Buscar" className="coin-input" onChange={handleChange}/>
+        
+        {/* Sugestões na barra de pesquisa */}
+
+        {/* <datalist id="search-list">
+          {filteredCoins.map(coin => {
+            if (filteredCoins.indexOf(coin) < 5)
+            return (
+              <option value={coin.name}/>
+            )
+          })}
+        </datalist> */}
+
         <h1 className="coin-text">Busque uma criptomoeda</h1>
       </div>
       {filteredCoins.map(coin => {
+        
+        
+        
         return (
           <Coin 
             key={coin.id}
