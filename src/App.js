@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import Coin from './Coin.js';
+import Coin from './components/Coin/Coin.js';
 import './App.css';
 
 
